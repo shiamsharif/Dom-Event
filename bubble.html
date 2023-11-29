@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbble</title>
+</head>
+<body>
+    <h1>Exploring event bubble</h1>
+    <section>
+        <ul id="list-ul">
+            <li id="item-1">shiam sharif</li>
+            <li id="item-2">sharif shiam</li>
+            <li id="item-3">sheike shiam</li>
+            <li id="item-4">sheike sharif</li>
+            <li id="item-5">shiam sheike</li>
+            <li id="item-6">sharif sheike</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log("item-2 clicked");
+            event.stopPropagation(); 
+        });
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log("ul clicked");
+        });
+
+    </script>
+</body>
+</html>
